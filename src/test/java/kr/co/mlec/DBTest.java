@@ -67,12 +67,19 @@ public class DBTest {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void 전체게시글조회Service테스트() throws Exception{
 		List<BoardVO> list = boardService.getBoardList();
 		for(BoardVO b : list) {
 			System.out.println(b);
 		}
+	}
+	
+	@Test
+	public void 상세게시글조회테스트() throws Exception{
+		BoardVO board = session.selectOne("board.dao.BoardDAO.selectBoardByNo", 21);
+		System.out.println(board);
 	}
 
 }

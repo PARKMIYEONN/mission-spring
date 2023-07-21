@@ -22,4 +22,12 @@ public class BoardServiceImpl implements BoardService {
 		return list;
 	}
 
+	@Override
+	public BoardVO getBoard(int no) {
+		BoardVO vo = dao.selectBoardByNo(no);
+		return vo;
+	}
+	
+	
+
 }

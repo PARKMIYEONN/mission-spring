@@ -19,5 +19,10 @@ public class BoardDAOImpl implements BoardDAO {
 		List<BoardVO> list = sqlSession.selectList("board.dao.BoardDAO.selectAllBoard");
 		return list;
 	}
+	
+	public BoardVO selectBoardByNo(int no) {
+		BoardVO board = sqlSession.selectOne("board.dao.BoardDAO.selectBoardByNo", no);
+		return board;
+	}
 
 }
