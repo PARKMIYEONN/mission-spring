@@ -15,6 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.co.mlec.board.dao.BoardDAO;
+import kr.co.mlec.board.service.BoardService;
 import kr.co.mlec.board.vo.BoardVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -29,6 +30,9 @@ public class DBTest {
 	
 	@Autowired
 	private BoardDAO boardDAO;
+	
+	@Autowired
+	private BoardService boardService;
 	
 	@Ignore
 	@Test
@@ -54,9 +58,18 @@ public class DBTest {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void 전체게시글조회BoardDAO테스트() throws Exception{
 		List<BoardVO> list = boardDAO.selectAllBoard();
+		for(BoardVO b : list) {
+			System.out.println(b);
+		}
+	}
+	
+	@Test
+	public void 전체게시글조회Service테스트() throws Exception{
+		List<BoardVO> list = boardService.getBoardList();
 		for(BoardVO b : list) {
 			System.out.println(b);
 		}
