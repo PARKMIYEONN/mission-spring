@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardVO getBoard(int no) {
+	public BoardVO getBoardByNo(int no) {
 		BoardVO vo = dao.selectBoardByNo(no);
 		return vo;
 	}

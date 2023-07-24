@@ -16,6 +16,12 @@ public interface BoardDAO {
 	 * @return 조회된 게시글
 	 */
 	List<BoardVO> selectAllBoard();
+	
+	/**
+	 * 상세게시글 조회
+	 * @param no
+	 * @return 조회된 게시글
+	 */
 	BoardVO selectBoardByNo(int no);
 
 }

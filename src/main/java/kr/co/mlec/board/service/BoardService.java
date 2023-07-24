@@ -13,6 +13,6 @@ public interface BoardService {
 	
 	List<BoardVO> getBoardList();
 	
-	BoardVO getBoard(int no);
+	BoardVO getBoardByNo(int no);
 
 }
