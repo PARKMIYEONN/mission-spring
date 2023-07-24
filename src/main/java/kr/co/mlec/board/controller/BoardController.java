@@ -3,6 +3,7 @@ package kr.co.mlec.board.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.mlec.board.service.BoardService;
 import kr.co.mlec.board.vo.BoardVO;
+import kr.co.mlec.member.vo.MemberVO;
 
 @Controller
 public class BoardController {
@@ -68,8 +70,13 @@ public class BoardController {
 	}
 	
 	@GetMapping("/board/write")
-	public void writeForm(Model model) {
+	public void writeForm(Model model, HttpSession session) {
 		BoardVO board = new BoardVO();
+		
+		MemberVO userVO = (MemberVO) session.getAttribute("userVO"); 
+		if(userVO != null) {
+			board.setWriter(userVO.getId());
+		}
 		
 		model.addAttribute("boardVO", board);
 	}
