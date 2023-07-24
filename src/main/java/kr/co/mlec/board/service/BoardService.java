@@ -14,5 +14,7 @@ public interface BoardService {
 	List<BoardVO> getBoardList();
 	
 	BoardVO getBoardByNo(int no);
+	
+	void addBoard(BoardVO board);
 
 }

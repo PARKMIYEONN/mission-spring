@@ -1,9 +1,20 @@
 package kr.co.mlec.board.vo;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Length;
+
 public class BoardVO {
 	
 	private int no;
+	
+	@Length(min=2, max=50, message = "최소 2글자 이상 50글자 이하로만 가능합니다")
+//	@NotEmpty(message = "필수항목입니다")
 	private String title;
+	
+	@Pattern(regexp = "^[A-Za-z0-9가-힣]*$", message = "특수문자는 사용금지!!")
+	@NotEmpty(message = "필수항목입니다")
 	private String writer;
 	private String content;
 	private int viewCnt;

@@ -16,4 +16,10 @@
 		  from t_board
 		 where no = #{no}
 	</select>
+	
+	<!-- 새글등록 -->
+	<insert id="insertBoard" parameterType="boardVO">
+		insert into t_board(no, title, writer, content)
+		 values(seq_t_board_no.nextval, #{title}, #{writer}, #{content})
+	</insert>
 </mapper>

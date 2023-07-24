@@ -8,5 +8,6 @@
 </head>
 <body>
 	<a href="${ pageContext.request.contextPath }/board">게시판</a>
+	<a href="${ pageContext.request.contextPath }/board/write">새글등록</a>
 </body>
 </html>
