@@ -19,7 +19,16 @@ public class BoardVO {
 	private String content;
 	private int viewCnt;
 	private String regDate;
+	private int replyCnt;
 	
+	public int getReplyCnt() {
+		return replyCnt;
+	}
+
+	public void setReplyCnt(int replyCnt) {
+		this.replyCnt = replyCnt;
+	}
+
 	public BoardVO(int no, String title, String writer, String content, int viewCnt, String regDate) {
 		super();
 		this.no = no;

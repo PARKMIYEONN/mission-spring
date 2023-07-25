@@ -21,6 +21,10 @@
 			<td>${ board.no }</td>
 			<td>
 				<a href="${ pageContext.request.contextPath }/board/${ board.no }">${ board.title }</a>
+				<c:if test="${board.replyCnt ne 0 }">
+					[${board.replyCnt }]
+					</c:if>
+					
 			</td>
 			<td>${ board.writer }</td>
 			<td>${ board.regDate }</td>
