@@ -6,6 +6,15 @@
 	version="4.0">
   <display-name>spring-mvc</display-name>
   
+     <servlet>
+      <servlet-name>dispatcherServlet</servlet-name>
+      <servlet-class>kr.ac.kopo.framework.DispatcherServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>dispatcherServlet</servlet-name>
+      <url-pattern>*.do</url-pattern>
+   </servlet-mapping>
+  
   <servlet>
   	<servlet-name>dispatcher</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

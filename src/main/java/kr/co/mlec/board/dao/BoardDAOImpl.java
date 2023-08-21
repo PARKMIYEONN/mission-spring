@@ -30,7 +30,5 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.insert("board.dao.BoardDAO.insertBoard", board);
 	}
 	
-	
-	
 
 }
